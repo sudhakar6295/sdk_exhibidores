@@ -46,7 +46,16 @@ class ExhibidoreschileScrapingPipeline:
                 record.specifications = item['features']
                 record.last_scraped_date = datetime.now(timezone.utc)
                 record.updated_date = datetime.now(timezone.utc)
-                record.route_product1 = item['route_product']
+                record.route_product1 = item['route_product1']
+                record.route_product2 = item['route_product2']
+                record.route_product3 = item['route_product3']
+                record.route_product4 = item['route_product4']
+                record.route_product5 = item['route_product5']
+                record.route_product6 = item['route_product6']
+                record.route_product7 = item['route_product7']
+                record.route_product8 = item['route_product8']
+                record.route_product9 = item['route_product9']
+                record.route_product10 = item['route_product10']
                 
                 # Commit the changes to the database
                 session.commit()
@@ -64,7 +73,16 @@ class ExhibidoreschileScrapingPipeline:
                 stock_comentarie_2 = item['stock_comentarie_2'],
                 stock_comentarie_3 = item['stock_comentarie_3'],
                 images = item['images'],
-                route_product = item['route_product'],
+                route_product1 = item['route_product1'],
+                route_product2 = item['route_product2'],
+                route_product3 = item['route_product3'],
+                route_product4 = item['route_product4'],
+                route_product5 = item['route_product5'],
+                route_product6 = item['route_product6'],
+                route_product7 = item['route_product7'],
+                route_product8 = item['route_product8'],
+                route_product9 = item['route_product9'],
+                route_product10 = item['route_product10'],
                 long_description = item['long_description'],
                 specifications	 = item['features'],
                 created_date	 = datetime.now(timezone.utc),
