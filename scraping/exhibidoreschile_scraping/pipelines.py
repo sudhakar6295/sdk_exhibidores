@@ -8,7 +8,7 @@
 from itemadapter import ItemAdapter
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from exhibidoreschile_scraping.models import Product
+from exhibidoreschile_scraping.models import Products
 
 
 class ExhibidoreschileScrapingPipeline:
@@ -27,7 +27,7 @@ class ExhibidoreschileScrapingPipeline:
 
         try:
             # Query the database for the record you want to update
-            record = session.query(Product).filter_by(sku=item['sku']).first()
+            record = session.query(Products).filter_by(sku=item['sku']).first()
             
             # Update the record if found
             if record:
@@ -50,7 +50,7 @@ class ExhibidoreschileScrapingPipeline:
                 session.commit()
                 spider.logger.info("Record updated successfully.")   
             else:
-                new_record = Product(
+                new_record = Products(
                 name = item['title'],
                 sku = item['sku'],
                 price = item['price'],
