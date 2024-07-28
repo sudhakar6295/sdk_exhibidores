@@ -14,8 +14,8 @@ from exhibidoreschile_scraping.models import Product
 class ExhibidoreschileScrapingPipeline:
 
     def  __init__(self):
-        engine = engine = create_engine('mysql://root:sudhakar@localhost/sdk_exhibidores')
-        #engine = create_engine('mariadb+mariadbconnector://polymer:uEL50aB1IRRl9DMn@localhost/polymer')
+        #engine = engine = create_engine('mysql://root:sudhakar@localhost/sdk_exhibidores')
+        engine = create_engine('mysql://sdk:TKnApQsKErGlXv6H@localhost/sdk_exhibidores')
         self.Session = sessionmaker(bind=engine)
 
     def process_item(self, item, spider):

@@ -46,7 +46,7 @@ class Product(Base):
 
 # Define your database connection
 #engine = create_engine('mysql://root:sudhakar@localhost/sdk_exhibidores')
-engine = create_engine('mysql://root:sdk@TKnApQsKErGlXv6H/sdk_exhibidores')
+engine = create_engine('mysql://sdk:TKnApQsKErGlXv6H@localhost/sdk_exhibidores')
 
 # Create the tables
 Base.metadata.create_all(engine)
