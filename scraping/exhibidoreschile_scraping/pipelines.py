@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from exhibidoreschile_scraping.models import Products
-import datetime,timezone
+from datetime import datetime,timezone
 
 class ExhibidoreschileScrapingPipeline:
 
