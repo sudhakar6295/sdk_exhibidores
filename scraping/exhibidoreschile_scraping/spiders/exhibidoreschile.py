@@ -32,17 +32,19 @@ class ExhibidoreschileSpider(scrapy.Spider):
             yield Request (url=product,callback=self.parse_product,meta={'data':data})
 
     def clean_stock(self,stock):
-
-        pattern = r"(\d+)"
-        qty = stock
-        match = re.search(pattern, stock)
-        if match:
-            qty = match.group(1)
-
         try:
-            qty = int(qty)
-        except Exception as e:
-            print(f"Not able to convert {qty} to int {e}")
+            pattern = r"(\d+)"
+            qty = stock
+            match = re.search(pattern, stock)
+            if match:
+                qty = match.group(1)
+
+            try:
+                qty = int(qty)
+            except Exception as e:
+                print(f"Not able to convert {qty} to int {e}")
+        except :
+            qty = 0
 
         return qty
     
