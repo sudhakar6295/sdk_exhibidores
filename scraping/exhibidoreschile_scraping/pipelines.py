@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from exhibidoreschile_scraping.models import Products
-
+import datetime,timezone
 
 class ExhibidoreschileScrapingPipeline:
 
@@ -45,6 +45,8 @@ class ExhibidoreschileScrapingPipeline:
                 record.route_product = item['route_product']
                 record.long_description = item['long_description']
                 record.specifications = item['features']
+                record.last_scraped_date = datetime.now(timezone.utc)
+                record.updated_date = datetime.now(timezone.utc)
                 
                 # Commit the changes to the database
                 session.commit()
@@ -64,7 +66,10 @@ class ExhibidoreschileScrapingPipeline:
                 images = item['images'],
                 route_product = item['route_product'],
                 long_description = item['long_description'],
-                specifications	 = item['features']
+                specifications	 = item['features'],
+                created_date	 = datetime.now(timezone.utc),
+                last_scraped_date = datetime.now(timezone.utc),
+                updated_date = datetime.now(timezone.utc),
                   )
                 
                 # Add more columns and values as needed
