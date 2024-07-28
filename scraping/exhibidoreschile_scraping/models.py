@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 Base = declarative_base()
 
 class Product(Base):
-    __tablename__ = 'product'
+    __tablename__ = 'products'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     sku = Column(String(255), nullable=False)
