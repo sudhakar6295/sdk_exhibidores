@@ -35,7 +35,7 @@
             <div class="card">
                 <div class="card-body">
                     <h1 style="font-size: 20px;" class="card-title">{{ category }}</h1>
-                    <a href="{{ category }}"><button class="btn btn-success">Go to {{ category }}</button></a>
+                    <a href="{% url 'category' category %}"><button class="btn btn-success">Go to {{ category }}</button></a>
                 </div>
             </div>
         </div>
