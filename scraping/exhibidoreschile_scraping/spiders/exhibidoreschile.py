@@ -75,7 +75,11 @@ class ExhibidoreschileSpider(scrapy.Spider):
            
             
         breadcrum_lst = response.xpath('//*[@class="andes-breadcrumb"]//li//text()').extract()
-        breadcrum = '/'.join(breadcrum_lst)
+        route_product_dict = {}
+        for i,value in enumerate(breadcrum_lst):
+            key = f"route_product{i}"
+            route_product_dict[key] = value
+   
         sku = feature_dict.get('Modelo')
         images_lst= []
         stock_dict = {}
@@ -130,7 +134,6 @@ class ExhibidoreschileSpider(scrapy.Spider):
                 'stock_comentarie_2' : stock_comentarie.get('stock_comentarie_2'),
                 'stock_comentarie_3' : stock_comentarie.get('stock_comentarie_3'),
                 'images' : image_dict,
-                'route_product' : breadcrum,
                 'short_description' :None,
                 'long_description' :description,
                 'pdf' :None,
@@ -142,7 +145,19 @@ class ExhibidoreschileSpider(scrapy.Spider):
                 'glossy_or_matte' : None,
                 'main_material' :None,
                 'origen' : None ,
-                'features':feature_dict } 
+                'features':feature_dict,
+                'route_product1':route_product_dict.get('route_product1'),
+                'route_product2':route_product_dict.get('route_product2'),
+                'route_product3':route_product_dict.get('route_product3'),
+                'route_product4':route_product_dict.get('route_product4'),
+                'route_product5':route_product_dict.get('route_product5'),
+                'route_product6':route_product_dict.get('route_product6'),
+                'route_product7':route_product_dict.get('route_product7'),
+                'route_product8':route_product_dict.get('route_product8'),
+                'route_product9':route_product_dict.get('route_product9'),
+                'route_product10':route_product_dict.get('route_product10'),
+
+                  } 
             
             yield data
 

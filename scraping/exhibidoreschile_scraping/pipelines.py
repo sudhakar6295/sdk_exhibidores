@@ -42,11 +42,11 @@ class ExhibidoreschileScrapingPipeline:
                 record.stock_comentarie_2 = item['stock_comentarie_2']
                 record.stock_comentarie_3 = item['stock_comentarie_3']
                 record.images = item['images']
-                record.route_product = item['route_product']
                 record.long_description = item['long_description']
                 record.specifications = item['features']
                 record.last_scraped_date = datetime.now(timezone.utc)
                 record.updated_date = datetime.now(timezone.utc)
+                record.route_product1 = item['route_product']
                 
                 # Commit the changes to the database
                 session.commit()

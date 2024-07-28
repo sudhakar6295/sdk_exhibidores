@@ -24,7 +24,7 @@ class Products(Base):
     stock_comentarie_2 = Column(String(100))
     stock_comentarie_3 = Column(String(100))
     images = Column(JSON)  # SQLAlchemy does not have a direct JSON type, but you can use JSON type if your database supports it
-    route_product = Column(Text)
+    route_product1 = Column(Text)
     short_description = Column(Text)
     long_description = Column(Text)
     pdf = Column(Text)
@@ -42,6 +42,16 @@ class Products(Base):
     status = Column(String(50))
     name = Column(String(255), nullable=True)
     specifications = Column(JSON)
+    route_product1 = Column(Text)
+    route_product2 = Column(Text)
+    route_product3 = Column(Text)
+    route_product4 = Column(Text)
+    route_product5 = Column(Text)
+    route_product6 = Column(Text)
+    route_product7 = Column(Text)
+    route_product8 = Column(Text)
+    route_product9 = Column(Text)
+    route_product10 = Column(Text)
 
 
 # Define your database connection
