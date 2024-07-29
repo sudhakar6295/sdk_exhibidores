@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'exhibidoreschile.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-'''
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -86,8 +86,8 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": "22222",
     }
-} '''
-
+} 
+'''
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -97,7 +97,7 @@ DATABASES = {
         "HOST": "localhost",
        
     }
-} 
+} '''
 
 
 # Password validation
