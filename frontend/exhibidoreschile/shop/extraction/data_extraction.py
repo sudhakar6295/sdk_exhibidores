@@ -85,14 +85,7 @@ def generate_html(data):
 def get_product_data(sku):
 
     product_data = Products.objects.filter(sku=sku).first()
-    if product_data:
-        # Ensure datetime fields are timezone-aware
-        if timezone.is_naive(product_data.created_date):
-            product_data.created_date = timezone.make_aware(product_data.created_date)
-        if timezone.is_naive(product_data.updated_date):
-            product_data.updated_date = timezone.make_aware(product_data.updated_date)
-        if timezone.is_naive(product_data.last_scraped_date):
-            product_data.last_scraped_date = timezone.make_aware(product_data.last_scraped_date)
+
     images = list(product_data.images.values())
     save_image(images)
     abs_image = get_image_name(images)

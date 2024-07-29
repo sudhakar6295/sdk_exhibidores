@@ -172,6 +172,21 @@
             <div>{{ specifications_html|safe }}</div>
         {% endif %}
 
+        {% if product.stock_1 %}
+            <p><strong>Stock 1:</strong> {{ product.stock_1 }}</p>
+            <p><strong>Stock comentarie 1:</strong> {{ product.stock_comentarie_1 }}</p>
+        {% endif %}
+
+        {% if product.stock_2 %}
+            <p><strong>Stock 2:</strong> {{ product.stock_2 }}</p>
+            <p><strong>Stock comentarie 2:</strong> {{ product.stock_comentarie_2 }}</p>
+        {% endif %}
+
+        {% if product.stock_3 %}
+            <p><strong>Stock 3:</strong> {{ product.stock_3 }}</p>
+            <p><strong>Stock comentarie 3:</strong> {{ product.stock_comentarie_3 }}</p>
+        {% endif %}
+
 
         {% if product.route_product1 %}
             <p><strong>Category:</strong> {{ product.route_product1 }}</p>
