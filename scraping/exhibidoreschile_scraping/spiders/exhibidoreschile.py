@@ -91,6 +91,7 @@ class ExhibidoreschileSpider(scrapy.Spider):
             default = variation.xpath('.//aria-current').get()
             variation_id = variation.xpath('.//@title').get()
             variation_url = variation.xpath('.//@href').get()
+            product_url = f"https://www.exhibidoreschile.cl{variation_url}"
             if default:
                 
                 variation_qty = response.xpath('.//*[@class="ui-pdp-buybox__quantity__available"]/text()').get()
